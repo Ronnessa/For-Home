@@ -21,6 +21,10 @@ body {
 	font-family: 'Dancing Script', cursive;
 	font-weight: bold;
 	font-size: 1.5rem;
+	&--big {
+		font-size: 2.5rem;
+		margin-bottom: 0.5em;
+	}
 }
 
 .link {
@@ -37,7 +41,7 @@ body {
 }
 
 .link:hover {
-	color: $link-hover;
+	color: $main-color;
 }
 
 .ti {
@@ -46,7 +50,9 @@ body {
 .nav {
 	position: sticky;
 	top: 0;
+	width: 100%;
 	padding: 1em;
+	background-color: $nav;
 	&__container {
 		display: flex;
 		justify-content: space-around;
@@ -90,13 +96,16 @@ body {
 }
 
 .section {
-	padding: 1.5em;
+	padding: 2em 0.5em;
 	&__heading {
 		margin: 0.5em;
 		font-size: 2rem;
 		padding: 1em;
 		text-align: center;
 	}
+}
+.about-us {
+	background-color: $bgcolor2;
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -106,13 +115,6 @@ body {
 		padding: 1.5em;
 		min-width: 240px;
 		text-align: center;
-	}
-}
-.about-us {
-	background-color: $aboutus;
-	&__heading {
-		margin-bottom: 1em;
-		font-size: 1.2rem;
 	}
 }
 
@@ -129,7 +131,57 @@ body {
 }
 
 .contact {
-	background-color: $contact;
+	background-color: $bgcolor2;
+	&__heading {
+		margin: 2em 0 1em;
+		font-size: 1.2rem;
+	}
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		padding: 1em 0;
+	}
+	&__item {
+		margin: 1em;
+	}
+	& form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 2em;
+	}
+	& input {
+		margin: 1em;
+		padding: 0.5em 1.5em;
+		border: none;
+		background: none;
+		border-bottom: solid 1px black;
+	}
+	& input:placeholder-shown {
+		text-align: center;
+	}
+	& button {
+		margin-top: 1em;
+		padding: 1em 2em;
+		border: none;
+		border-radius: 5px;
+		color: #fff;
+		background-color: $main-color;
+		transition: transform 0.3s;
+		cursor: pointer;
+	}
+	& button:hover {
+		transform: translateY(-3px);	
+	}
+	&__confirmation-text {
+		position: relative;
+		top: 1em;
+		margin-top: 0.5em;
+		height: 1rem;
+		color: $confirmation;
+	}
 }
 
 .ti-brand-facebook,
@@ -156,13 +208,17 @@ body {
 		&__heading {
 			padding-top: 0;
 		}
+	}
+	.about-us {
 		&__container {
 			flex-direction: row;
 			justify-content: space-evenly;
 			align-items: flex-start;
 		}
-		&__item--left {
-			text-align: left;
+	}
+	.contact {
+		&__item {
+			margin: 1.5em;
 		}
 	}
 }
@@ -174,6 +230,31 @@ body {
 		}
 		&__mobile {
 			display: none;
+		}
+	}
+	.contact {
+		&__container {
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: start;
+		}
+		&__item {
+			margin: 0 1em;
+			text-align: left;
+			&--logo {
+				position: relative;
+				top: 2.5em;
+			}
+		}
+		& form {
+			align-items: start;
+		}
+		& input {
+			margin: 1em 0 2em;
+			padding: 1em 2em 0.5em 0;
+		}
+		& input:placeholder-shown {
+			text-align: left;
 		}
 	}
 }

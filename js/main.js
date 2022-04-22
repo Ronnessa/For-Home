@@ -1,8 +1,9 @@
 function addListenerToNav() {
 	const navBtn = document.getElementById('nav-btn');
-	
+	navBtn.addEventListener('click', toggleNavigation);
+
 	function toggleNavigation() {
-	const navMobile = document.getElementById('nav-mobile');
+		const navMobile = document.getElementById('nav-mobile');
 		const navIcon = document.getElementById('nav-icon');
 		navIcon.classList.toggle('ti-menu-2');
 		navIcon.classList.toggle('ti-x');
@@ -16,9 +17,20 @@ function addListenerToNav() {
 
 		navMobile.addEventListener('click', toggleNavigation);
 	}
-	navBtn.addEventListener('click', toggleNavigation);
 }
-addListenerToNav()
+addListenerToNav();
+
+function signUpForNewsletter() {
+	const form = document.getElementById('newsletter');
+	form.addEventListener('submit', e => sendConfirmation(e));
+
+	function sendConfirmation(e) {
+		e.preventDefault();
+		const confirmationText = document.querySelector('.contact__confirmation-text');
+		confirmationText.textContent = `Zapisano do newslettera!`;
+	}
+}
+signUpForNewsletter();
 
 function getYear() {
 	const span = document.getElementById('year');
