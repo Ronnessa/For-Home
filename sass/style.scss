@@ -51,13 +51,14 @@ body {
 	position: sticky;
 	top: 0;
 	width: 100%;
-	padding: 1em;
+	padding: 1em 1.5em;
 	background-color: $nav;
 	&__container {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 		align-items: center;
 		list-style-type: none;
+
 	}
 	&__desktop {
 		display: none;
@@ -76,7 +77,7 @@ body {
 		background-color: $nav;
 		z-index: 0;
 		transform: translateX(-110%);
-		transition: transform 0.6s ease-in;
+		transition: transform 0.5s ease-in;
 		&--active {
 			transform: translateX(0);
 		}
@@ -130,6 +131,44 @@ body {
 	margin-top: 1em;
 }
 
+.faq {
+	background-color: $bgcolor;
+	&__question-list {
+		list-style-type: none;
+	}
+	li {
+		border-radius: 10px;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.24);
+		margin: 2em 1em;
+		padding: 2em;
+		cursor: pointer;
+	}
+	&__heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1em 0;
+	}
+	button {
+		background: none;
+		border: none;
+		color: $main-color;
+		transition: transform 0.5s;
+		cursor: pointer;
+	}
+	.icon-rotate {
+		transform: rotate(180deg);
+	}
+
+	&__content {
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.5s;
+	}
+	.active {
+		margin: 1em 0;
+	}
+}
 .contact {
 	background-color: $bgcolor2;
 	&__heading {
@@ -173,7 +212,7 @@ body {
 		cursor: pointer;
 	}
 	& button:hover {
-		transform: translateY(-3px);	
+		transform: translateY(-3px);
 	}
 	&__confirmation-text {
 		position: relative;
@@ -216,6 +255,11 @@ body {
 			align-items: flex-start;
 		}
 	}
+	.faq {
+		&__question-list {
+			padding: 1em 2em 2em ;
+		}
+	}
 	.contact {
 		&__item {
 			margin: 1.5em;
@@ -230,6 +274,11 @@ body {
 		}
 		&__mobile {
 			display: none;
+		}
+	}
+	.faq {
+		&__question-list {
+			padding: 1em 4em
 		}
 	}
 	.contact {
@@ -250,7 +299,7 @@ body {
 			align-items: start;
 		}
 		& input {
-			margin: 1em 0 2em;
+			margin: 1em 0;
 			padding: 1em 2em 0.5em 0;
 		}
 		& input:placeholder-shown {

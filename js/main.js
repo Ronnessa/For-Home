@@ -20,6 +20,43 @@ function addListenerToNav() {
 }
 addListenerToNav();
 
+function showFAQAnswers() {
+	const questions = document.querySelectorAll('.faq__heading');
+	const answers = document.querySelectorAll('.faq__content');
+	questions.forEach(question => question.addEventListener('click', showAnswer));
+	answers.forEach(answer => answer.addEventListener('click', closeAnswers))
+
+	function showAnswer() {
+		const currentAnswer = this.nextElementSibling;
+		if (currentAnswer.classList.contains('active')) {
+			closeAnswers()
+		} else {
+			closeAnswers();
+			currentAnswer.style.maxHeight = currentAnswer.scrollHeight + 'px';
+			currentAnswer.classList.add('active');
+			this.lastElementChild.classList.add('icon-rotate');
+		}	
+	}
+	
+	function closeAnswers() {
+		answers.forEach(a => {
+			a.style.maxHeight = 0
+			a.classList.remove('active')
+		})
+		rotateIcon()
+	}
+
+	function rotateIcon() {
+		const icons = document.querySelectorAll('.faq__heading > button');
+		icons.forEach(icon => {
+			if (icon.classList.contains('icon-rotate')) {
+				icon.classList.remove('icon-rotate');
+			}
+		});
+	}
+}
+showFAQAnswers();
+
 function signUpForNewsletter() {
 	const form = document.getElementById('newsletter');
 	form.addEventListener('submit', e => sendConfirmation(e));
