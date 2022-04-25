@@ -1,3 +1,91 @@
+@-webkit-keyframes show-forwards {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes show-forwards {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes show-backwards {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes show-backwards {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes hide-forwards {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes hide-forwards {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes hide-backwards {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes hide-backwards {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -58,6 +146,7 @@ body {
   width: 100%;
   padding: 1em 1.5em;
   background-color: #fffaf7;
+  z-index: 5;
 }
 
 .nav__container {
@@ -127,6 +216,100 @@ body {
   z-index: 1;
 }
 
+.header-img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  z-index: -5;
+}
+
+.header-img--first {
+  background-image: url(../img/chair-small.jpg);
+}
+
+.header-img--second {
+  background-image: url(../img/living-room-small.jpg);
+  -webkit-transform: translatex(100%);
+          transform: translatex(100%);
+}
+
+.header-img__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(22, 21, 16, 0.623);
+  z-index: -1;
+}
+
+.header-img__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 1em;
+  color: #fffaf7;
+  z-index: 1;
+}
+
+.header-img__text h1 {
+  font-family: 'Dancing Script', cursive;
+}
+
+.header-img__text p:last-of-type {
+  margin-top: 1em;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.header-img__button {
+  position: absolute;
+  top: 50%;
+  height: 100%;
+  color: #fffaf7;
+  background: none;
+  border: none;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.header-img__button--left {
+  left: 1em;
+  padding-right: 2em;
+}
+
+.header-img__button--right {
+  right: 1em;
+  padding-left: 2em;
+}
+
+.header-img__container {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
 .section {
   padding: 2em 0.5em;
 }
@@ -159,6 +342,12 @@ body {
   padding: 1.5em;
   min-width: 240px;
   text-align: center;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.about-us__item:hover {
+  color: #df7523;
 }
 
 .ti-packge-export,
@@ -235,7 +424,7 @@ body {
 }
 
 .contact__heading {
-  margin: 2em 0 1em;
+  margin: 2.5em 0 1em;
   font-size: 1.2rem;
 }
 
@@ -325,11 +514,34 @@ body {
 .footer {
   padding: 1em 2em;
   background-color: #1d1d1d;
-  color: #fff;
+  color: #fffaf7;
   text-align: right;
 }
 
 @media (min-width: 768px) {
+  .header-img__button {
+    opacity: 0.7;
+  }
+  .header-img__button--left {
+    padding-right: 10em;
+  }
+  .header-img__button--right {
+    padding-left: 10em;
+  }
+  .header-img__text h1 {
+    font-size: 2.5rem;
+  }
+  .header-img__text p {
+    font-size: 1.5rem;
+  }
+  .header-img__text p:last-of-type {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  .ti-chevron-right,
+  .ti-chevron-left {
+    font-size: 4rem;
+  }
   .section {
     padding: 3em 1em;
   }
@@ -341,9 +553,8 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -363,6 +574,15 @@ body {
   .nav__mobile {
     display: none;
   }
+  .header-img--first {
+    background-image: url(../img/chair-large.jpg);
+  }
+  .header-img--second {
+    background-image: url(../img/living-room-large.jpg);
+  }
+  .header-img__text h1 {
+    font-size: 3rem;
+  }
   .faq__question-list {
     padding: 1em 4em;
   }
@@ -371,15 +591,15 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
   }
   .contact__item {
     margin: 0 1em;
+    padding: 1em;
     text-align: left;
   }
   .contact__item--logo {
@@ -397,6 +617,9 @@ body {
   }
   .contact input:placeholder-shown {
     text-align: left;
+  }
+  .footer__text {
+    margin-right: 3em;
   }
 }
 /*# sourceMappingURL=style.css.map */

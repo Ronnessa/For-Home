@@ -20,30 +20,61 @@ function addListenerToNav() {
 }
 addListenerToNav();
 
+function changeImages() {
+	const forwardBtn = document.getElementById('forward-btn');
+	const backwardBtn = document.getElementById('backward-btn');
+	forwardBtn.addEventListener('click', () => {
+		slide('forwards');
+	});
+	backwardBtn.addEventListener('click', () => {
+		slide('backwards');
+	});
+
+	function slide(direction) {
+		const images = document.querySelectorAll('.header-img');
+		images.forEach(image => {
+			image.classList.toggle('header-img--active');
+			image.classList.toggle('header-img--disabled');
+			if (image.classList.contains('header-img--active')) {
+				image.style.animationName = `show-${direction}`;
+			}
+			if (image.classList.contains('header-img--disabled')) {
+				image.style.animationName = `hide-${direction}`;
+			}
+		});
+	}
+	setInterval(() => {
+		slide('forwards');
+	}, 7000);
+}
+changeImages();
+
 function showFAQAnswers() {
 	const questions = document.querySelectorAll('.faq__heading');
 	const answers = document.querySelectorAll('.faq__content');
 	questions.forEach(question => question.addEventListener('click', showAnswer));
-	answers.forEach(answer => answer.addEventListener('click', closeAnswers))
+	answers.forEach(answer => answer.addEventListener('click', closeAnswers));
 
 	function showAnswer() {
 		const currentAnswer = this.nextElementSibling;
 		if (currentAnswer.classList.contains('active')) {
-			closeAnswers()
+			closeAnswers();
 		} else {
 			closeAnswers();
 			currentAnswer.style.maxHeight = currentAnswer.scrollHeight + 'px';
 			currentAnswer.classList.add('active');
 			this.lastElementChild.classList.add('icon-rotate');
-		}	
+		}
 	}
-	
+
 	function closeAnswers() {
 		answers.forEach(a => {
-			a.style.maxHeight = 0
-			a.classList.remove('active')
-		})
-		rotateIcon()
+			if (a.classList.contains('active')) {
+				a.style.maxHeight = 0;
+				a.classList.remove('active');
+			}
+		});
+		rotateIcon();
 	}
 
 	function rotateIcon() {
