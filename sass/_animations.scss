@@ -30,3 +30,12 @@
 		transform: translateX(100%);
 	}
 }
+
+@keyframes nav-btn-animation {
+	0% {
+		transform: scaleY(0)
+	}
+	100% {
+		transform: scaleY(1)
+	}
+}

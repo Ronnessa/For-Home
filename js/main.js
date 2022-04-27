@@ -8,6 +8,10 @@ function addListenerToNav() {
 		navIcon.classList.toggle('ti-menu-2');
 		navIcon.classList.toggle('ti-x');
 		navMobile.classList.toggle('nav__items--active');
+		navBtn.classList.add('nav-btn-animation');
+		setTimeout(() => {
+			navBtn.classList.remove('nav-btn-animation');
+		}, 400);
 
 		if (navMobile.classList.contains('nav__items--active')) {
 			window.addEventListener('scroll', toggleNavigation);
@@ -45,7 +49,7 @@ function changeImages() {
 	}
 	setInterval(() => {
 		slide('forwards');
-	}, 7000);
+	}, 5000);
 }
 changeImages();
 
