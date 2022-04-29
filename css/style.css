@@ -592,6 +592,7 @@ body {
   -webkit-appearance: none;
   margin: 1em;
   padding: 0.5em 1.5em;
+  border-radius: 0;
   border: none;
   background: none;
   border-bottom: solid 1px black;

@@ -1,3 +1,17 @@
+import { renderProducts } from './modules/render-products.js';
+
+const bodyAtribute = document.body.getAttribute('data-page');
+
+if (bodyAtribute === 'main') {
+	import('./modules/header-slider.js').then(module => module.changeImages());
+	function renderBestsellers() {
+		const bestsellersList = document.getElementById('bestsellers-container');
+		renderProducts(bestsellersList, 'bestsellers');
+	}
+	renderBestsellers();
+}
+
+// all pages functions
 function addListenerToNav() {
 	const navBtn = document.getElementById('nav-btn');
 	navBtn.addEventListener('click', toggleNavigation);
@@ -23,35 +37,6 @@ function addListenerToNav() {
 	}
 }
 addListenerToNav();
-
-function changeImages() {
-	const forwardBtn = document.getElementById('forward-btn');
-	const backwardBtn = document.getElementById('backward-btn');
-	forwardBtn.addEventListener('click', () => {
-		slide('forwards');
-	});
-	backwardBtn.addEventListener('click', () => {
-		slide('backwards');
-	});
-
-	function slide(direction) {
-		const images = document.querySelectorAll('.header-img');
-		images.forEach(image => {
-			image.classList.toggle('header-img--active');
-			image.classList.toggle('header-img--disabled');
-			if (image.classList.contains('header-img--active')) {
-				image.style.animationName = `show-${direction}`;
-			}
-			if (image.classList.contains('header-img--disabled')) {
-				image.style.animationName = `hide-${direction}`;
-			}
-		});
-	}
-	setInterval(() => {
-		slide('forwards');
-	}, 5000);
-}
-changeImages();
 
 function showFAQAnswers() {
 	const questions = document.querySelectorAll('.faq__heading');
