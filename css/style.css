@@ -352,19 +352,6 @@ body {
 }
 
 .bestsellers__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   margin: 2em;
   -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.24);
           box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.24);
@@ -372,21 +359,13 @@ body {
   overflow: hidden;
 }
 
-.item__image {
-  width: 100%;
-}
-
 .item__image-container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  top: 0;
+}
+
+.item__image {
+  width: 100%;
 }
 
 .item__heart {
@@ -399,14 +378,19 @@ body {
   cursor: pointer;
 }
 
-.item__title {
-  font-size: 1.2rem;
-  padding: 0.5em;
+.item__description-container {
+  height: auto;
   text-align: center;
 }
 
+.item__title {
+  font-size: 1.2rem;
+  margin: 1.5em 1em;
+  height: 2.5rem;
+}
+
 .item__price {
-  padding-bottom: 1em;
+  padding-bottom: 1.5em;
 }
 
 .item__price--old {
@@ -438,7 +422,7 @@ body {
 }
 
 .section {
-  padding: 2em 0.5em;
+  padding: 3em 0.5em;
 }
 
 .section__heading {
@@ -609,16 +593,13 @@ body {
   border-radius: 5px;
   color: #fff;
   background-color: #df7523;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   cursor: pointer;
 }
 
 .contact button:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+  opacity: 0.9;
 }
 
 .contact__confirmation-text {
@@ -691,7 +672,7 @@ body {
     margin: 2em;
   }
   .section {
-    padding: 3em 1em;
+    padding: 5em 1em;
   }
   .section__heading {
     padding-top: 0;

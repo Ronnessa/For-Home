@@ -1,6 +1,21 @@
 import { renderProducts } from './modules/render-products.js';
 
+// import { productList } from './modules/product-list.js';
+
 const bodyAtribute = document.body.getAttribute('data-page');
+// const cart = []
+// const cartLocalStorage = localStorage.getItem('cart')
+
+// const wishlist = []
+// const wishlistLocalStorage = localStorage.getItem('wishlist')
+
+
+// if (JSON.parse(cartLocalStorage)) {
+// 	cart.push(...JSON.parse(cartLocalStorage))
+// }
+// if (JSON.parse(wishlistLocalStorage)) {
+// 	wishlist.push(...JSON.parse(wishlistLocalStorage))
+// }
 
 if (bodyAtribute === 'main') {
 	import('./modules/header-slider.js').then(module => module.changeImages());
@@ -10,6 +25,23 @@ if (bodyAtribute === 'main') {
 	}
 	renderBestsellers();
 }
+
+// function addToCart() {
+// 	const addBtns = document.querySelectorAll('.add-to-cart');
+// 	addBtns.forEach(btn => btn.addEventListener('click', pushProductToCart));
+
+// 	function pushProductToCart() {
+// 		const productId = this.getAttribute('data-id');
+// 		productList.forEach(obj => {
+// 			if (obj.id == productId) {
+// 				cart.push(obj)
+// 			}
+// 		})
+// 		localStorage.setItem('cart', JSON.stringify(cart))
+// 	}
+// }
+// addToCart();
+
 
 // all pages functions
 function addListenerToNav() {

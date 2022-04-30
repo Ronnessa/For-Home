@@ -183,10 +183,10 @@ body {
 		grid-template-columns: 1fr;
 	}
 	&__item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		// display: flex;
+		// flex-direction: column;
+		// align-items: center;
+		// justify-content: center;
 		margin: 2em;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.24);
 		border-radius: 10px;
@@ -195,15 +195,14 @@ body {
 }
 
 .item {
+	&__image-container {
+		position: relative;
+		top: 0;
+	}
 	&__image {
 		width: 100%;
-		&-container {
-			position: relative;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
 	}
+
 	&__heart {
 		position: absolute;
 		border: none;
@@ -213,13 +212,17 @@ body {
 		z-index: 5;
 		cursor: pointer;
 	}
-	&__title {
-		font-size: 1.2rem;
-		padding: 0.5em;
+	&__description-container {
+		height: auto;
 		text-align: center;
 	}
+	&__title {
+		font-size: 1.2rem;
+		margin: 1.5em 1em;
+		height: 2.5rem;
+	}
 	&__price {
-		padding-bottom: 1em;
+		padding-bottom: 1.5em;
 		&--old {
 			margin-left: 0.5em;
 			text-decoration: line-through;
@@ -247,7 +250,7 @@ body {
 }
 
 .section {
-	padding: 2em 0.5em;
+	padding: 3em 0.5em;
 	&__heading {
 		margin: 0.5em;
 		font-size: 2rem;
@@ -364,11 +367,12 @@ body {
 		border-radius: 5px;
 		color: #fff;
 		background-color: $main-color;
-		transition: transform 0.3s;
-		cursor: pointer;
+		transition: opacity 0.3s;
+		cursor: pointer;		
+		
 	}
 	& button:hover {
-		transform: translateY(-3px);
+		opacity: 0.9;
 	}
 	&__confirmation-text {
 		position: relative;
@@ -448,7 +452,7 @@ body {
 		}
 	}
 	.section {
-		padding: 3em 1em;
+		padding: 5em 1em;
 		&__heading {
 			padding-top: 0;
 		}
