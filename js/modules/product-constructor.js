@@ -7,5 +7,6 @@ export class Product {
 		this.price = price;
 		this.oldPrice = oldPrice
 		this.categories = categories;
+		this.amount = 1
 	}
 }

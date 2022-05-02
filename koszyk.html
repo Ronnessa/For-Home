@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="W For Home kupisz wszystko co najlepsze dla Twojego domu!">
+    <meta name="description" content="For Home koszyk">
     <meta name="keywords" content="sklep, dom, akcesoria, sypialnia, kuchnia, salon">
-    <title>For Home</title>
+    <title>Koszyk</title>
     <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,80 +17,56 @@
     <script src="./js/main.js" defer type="module"></script>
 </head>
 
-<body data-page="main">
+<body data-page="cart">
     <nav class="nav nav__mobile nav__container">
         <button id="nav-btn" class="nav__button nav__button--burger">
             <i id="nav-icon" class="ti ti-menu-2 "></i>
         </button>
         <ul id="nav-mobile" class="nav__items">
-            <li><a href="#" class="link logo logo--big">For Home
+            <li><a href="index.html" class="link logo logo--big">For Home
                 </a></li>
-            <li> <a href="#" class="link">Sypialnia</a></li>
-            <li><a href="#" class="link">Kuchnia</a></li>
-            <li> <a href="#" class="link">Salon</a></li>
-            <li><a href="#" class="link">Akcesoria</a></li>
-            <li><a href="#" class="link">Wszystkie produkty</a></li>
-            <li> <a href="#" class="link link--red">Wyprzedaż</a></li>
+            <li> <a href="index.html" class="link">Sypialnia</a></li>
+            <li><a href="index.html" class="link">Kuchnia</a></li>
+            <li> <a href="index.html" class="link">Salon</a></li>
+            <li><a href="index.html" class="link">Akcesoria</a></li>
+            <li><a href="index.html" class="link">Wszystkie produkty</a></li>
+            <li> <a href="index.html" class="link link--red">Wyprzedaż</a></li>
         </ul>
         <div>
             <button class="nav__button link"><i class="ti ti-search"></i></button>
             <a href="lista-zyczen.html" class="link">
                 <i class="ti ti-heart"></i>
             </a>
-            <a href="koszyk.html" class="link">
+            <a href="#" class="link">
                 <i class="ti ti-shopping-cart"></i>
             </a>
         </div>
     </nav>
     <nav class="nav nav__desktop">
         <ul class="wrapper nav__container">
-            <li><a href="#" class="link logo">For Home</a></li>
-            <li><a href="#" class="link">Sypialnia</a></li>
-            <li><a href="#" class="link">Kuchnia</a></li>
-            <li><a href="#" class="link">Salon</a></li>
-            <li><a href="#" class="link">Akcesoria</a></li>
-            <li><a href="#" class="link">Wszystkie produkty</a></li>
-            <li><a href="#" class="link link--red">Wyprzedaż</a></li>
+            <li><a href="index.html" class="link logo">For Home</a></li>
+            <li><a href="index.html" class="link">Sypialnia</a></li>
+            <li><a href="index.html" class="link">Kuchnia</a></li>
+            <li><a href="index.html" class="link">Salon</a></li>
+            <li><a href="index.html" class="link">Akcesoria</a></li>
+            <li><a href="index.html" class="link">Wszystkie produkty</a></li>
+            <li><a href="index.html" class="link link--red">Wyprzedaż</a></li>
             <li><button class="nav__button link"><i class="ti ti-search"></i></button></li>
             <li><a href="lista-zyczen.html" class="link">
                     <i class="ti ti-heart"></i>
                 </a>
             </li>
-            <li><a href="koszyk.html" class="link">
+            <li><a href="#" class="link">
                     <i class="ti ti-shopping-cart"></i>
                 </a>
             </li>
         </ul>
     </nav>
-    <header>
-        <div class="wrapper">
-            <div class="header-img__container">
-                <div class="header-img header-img--first header-img--active">
-                    <div class="header-img__shadow"></div>
-                    <div class="header-img__text">
-                        <h1>Wszystko co najlepsze dla Twojego domu</h1>
-                    </div>
-                </div>
-                <div class="header-img header-img--second header-img--disabled">
-                    <div class="header-img__shadow"></div>
-                    <div class="header-img__text">
-                        <p>5% rabatu na zakupy z kodem</p>
-                        <p class="header-img__text--main">PROMO5</p>
-                    </div>
-                </div>
-                <button id="backward-btn" class="header-img__button header-img__button--left"><i
-                        class="ti ti-chevron-left"></i></button>
-                <button id="forward-btn" class="header-img__button header-img__button--right"><i
-                        class="ti ti-chevron-right"></i></button>
-            </div>
-        </div>
-    </header>
     <main>
-        <section class="section bestsellers">
+        <section class="section cart">
             <div class="wrapper">
-                <h2 class="section__heading">Bestsellery</h2>
-                <div id="bestsellers-container" class="bestsellers__container"></div>
-            </div>
+                <h2 class="section__heading">Koszyk</h2>
+                <div id="cart-container" class="cart__container"></div>
         </section>
         <section class="section about-us">
             <div class="wrapper">
