@@ -1,4 +1,5 @@
 import { productList } from './product-list.js';
+import { updateCartIcon } from './update-cart-icon.js';
 
 export function addToCart(cart) {
 	const addBtns = document.querySelectorAll('.add-to-cart');
@@ -9,8 +10,11 @@ export function addToCart(cart) {
 
 		for (let i = 0; i < cart.length; i++) {
 			if (cart[i].id == productId) {
-				cart[i].amount++;
-				localStorage.setItem('cart', JSON.stringify(cart));
+				if (cart[i].amount < 9) {
+					cart[i].amount++;
+					localStorage.setItem('cart', JSON.stringify(cart));
+					updateCartIcon(cart);
+				}
 				return;
 			}
 		}
@@ -18,6 +22,7 @@ export function addToCart(cart) {
 			if (obj.id == productId) {
 				cart.push(obj);
 				localStorage.setItem('cart', JSON.stringify(cart));
+				updateCartIcon(cart);
 			}
 		});
 	}

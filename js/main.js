@@ -1,6 +1,8 @@
 import { renderProducts } from './modules/render-products.js';
+import { updateCartIcon } from './modules/update-cart-icon.js';
 import { addToCart } from './modules/add-to-cart.js';
 import { renderCart } from './modules/render-cart.js';
+import { changeAmount } from './modules/change-amount-of-products.js';
 
 const bodyAtribute = document.body.getAttribute('data-page');
 
@@ -16,6 +18,8 @@ if (JSON.parse(cartLocalStorage)) {
 // 	wishlist.push(...JSON.parse(wishlistLocalStorage))
 // }
 
+updateCartIcon(cart)
+
 if (bodyAtribute === 'main') {
 	import('./modules/header-slider.js').then(module => module.changeImages());
 	function renderBestsellers() {
@@ -26,7 +30,9 @@ if (bodyAtribute === 'main') {
 	addToCart(cart);
 } else if (bodyAtribute === 'cart') {
 	renderCart(cart);
-	
+	if (cart.length > 0) {
+		changeAmount(cart);
+	}
 }
 
 // all pages functions

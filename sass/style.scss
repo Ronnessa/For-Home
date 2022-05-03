@@ -104,6 +104,26 @@ body {
 	animation: nav-btn-animation 0.4s;
 }
 
+.cart-icon {
+	position: relative;
+	z-index: -1;
+}
+.cart-icon::after {
+	content: attr(data-content);
+	position: absolute;
+	bottom: 0;
+	left: 1em;
+	width: 1.4em;
+	height: 1.4em;
+	background-color: $main-color;
+	color: #fff;
+	font-size: 1rem;
+	line-height: 1.2em;
+	text-align: center;
+	border-radius: 50%;
+	z-index: 5;
+}
+
 .header-img {
 	position: absolute;
 	top: 0;
@@ -368,6 +388,7 @@ body {
 		border-radius: 5px;
 		color: #fff;
 		background-color: $main-color;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.24);
 		transition: opacity 0.3s;
 		cursor: pointer;
 	}
@@ -419,25 +440,25 @@ body {
 		height: 8em;
 		margin: 1em;
 	}
-	&__item-details{
+	&__item-details {
 		display: flex;
 		align-items: center;
 		text-align: center;
 		justify-content: center;
 		margin-top: 1em;
 		width: 100%;
-		&--left{
+		&--left {
 			margin-right: 1em;
-
 		}
 		& p {
 			margin: 0.5em;
 		}
 	}
-	&__btn {
+	&__item-btn {
 		border: none;
 		height: 2em;
 		width: 2em;
+		color: #000;
 		border-radius: 5px;
 		background-color: $bgcolor2;
 		cursor: pointer;
@@ -445,7 +466,44 @@ body {
 	&__amount {
 		margin: 0 0.5em;
 	}
+	&__btn-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+	&__btn {
+		margin: 1em;
+		padding: 1em 2em;
+		color: #000;
+		background: none;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.24);
+		transition: color 0.3s;
+		cursor: pointer;
+		&:hover {
+			color: $main-color;
+		}
+		&--cta {
+			background-color: $main-color;
+			color: #fff;
+			transition: opacity 0.3s;
+			&:hover {
+				opacity: 0.9;
+				color: #fff;
+			}
+		}
+	}
+	&__sum-text {
+		text-align: right;
+		padding: 1em;
+		font-size: 1.4rem;
+		& span {
+			font-weight: bold;
+		}
+	}
 }
+
 @media (max-width: 350px) {
 	.item__image {
 		height: 10em;
@@ -519,8 +577,8 @@ body {
 	.cart {
 		&__item {
 			flex-direction: row;
-						& h3 {
-				width: 50%;
+			& h3 {
+				width: 65%;
 				margin-left: 2em;
 			}
 		}
@@ -529,16 +587,27 @@ body {
 			width: 15%;
 		}
 		&__item-details {
-			justify-content: space-around;
+			padding: 0 2em;
+			justify-content: space-between;
 			& P {
 				margin: 1.5em;
 			}
+		}
+		&__btn-container {
+			padding: 1em 2em;
+			justify-content: flex-end;
+		}
+		&__sum-text {
+			padding: 3em 2em 1em;
 		}
 	}
 }
 
 @media (min-width: 992px) {
 	.nav {
+		&__container {
+			padding: 0 1em;
+		}
 		&__desktop {
 			display: block;
 		}
@@ -597,5 +666,8 @@ body {
 	}
 	.footer__text {
 		margin-right: 3em;
+	}
+	.cart__item-details {
+		width: 50%;
 	}
 }
