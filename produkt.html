@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="For Home - koszyk">
+    <meta name="description" content="For Home - strona produktu">
     <meta name="keywords" content="sklep, dom, akcesoria, sypialnia, kuchnia, salon">
-    <title>Koszyk</title>
+    <title>For Home - strona produktu</title>
     <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js" defer type="module"></script>
 </head>
-
-<body data-page="cart">
+<body data-page="product">
     <nav class="nav nav__mobile nav__container">
         <button id="nav-btn" class="nav__button nav__button--burger">
             <i id="nav-icon" class="ti ti-menu-2 "></i>
@@ -37,7 +36,7 @@
             <a href="lista-zyczen.html" class="link">
                 <i class="ti ti-heart"></i>
             </a>
-            <a href="#" class="link">
+            <a href="koszyk.html" class="link">
                 <i class="ti ti-shopping-cart"></i>
             </a>
         </div>
@@ -46,27 +45,29 @@
         <ul class="wrapper nav__container">
             <li><a href="index.html" class="link logo">For Home</a></li>
             <li><a data-category="bedroom" href="lista-produktow.html" class="link link-product">Sypialnia</a></li>
-        <li><a data-category="kitchen" href="lista-produktow.html" class="link link-product">Kuchnia</a></li>
-        <li><a data-category="living-room" href="lista-produktow.html" class="link link-product">Salon</a></li>
-        <li><a data-category="accesories" href="lista-produktow.html" class="link link-product">Akcesoria</a></li>
-        <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
-        <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a></li>
+            <li><a data-category="kitchen" href="lista-produktow.html" class="link link-product">Kuchnia</a></li>
+            <li><a data-category="living-room" href="lista-produktow.html" class="link link-product">Salon</a></li>
+            <li><a data-category="accesories" href="lista-produktow.html" class="link link-product">Akcesoria</a></li>
+            <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
+            <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a>
+            </li>
             <li><button class="nav__button link"><i class="ti ti-search"></i></button></li>
             <li><a href="lista-zyczen.html" class="link">
                     <i class="ti ti-heart"></i>
                 </a>
             </li>
-            <li><a href="#" class="link">
+            <li><a href="koszyk.html" class="link">
                     <i class="ti ti-shopping-cart"></i>
                 </a>
             </li>
         </ul>
     </nav>
     <main>
-        <section class="section cart">
+        <section class="section product">
             <div class="wrapper">
-                <h2 class="section__heading">Koszyk</h2>
-                <div id="cart-container" class="cart__container"></div>
+                <h2 class="section__heading">Produkt X</h2>
+                <div class="bestsellers__container"></div>
+            </div>
         </section>
         <section class="section about-us">
             <div class="wrapper">
@@ -79,6 +80,7 @@
                         <i class="ti ti-truck-delivery"></i>
                         <p>Darmowa dostawa od 199zł</p>
                     </div>
+
                     <div class="about-us__item">
                         <i class="ti ti-rotate-clockwise"></i>
                         <p>Możliwość zwrotu do 14 dni</p>
@@ -213,5 +215,4 @@
         </div>
     </footer>
 </body>
-
 </html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="For Home - produkty">
+    <meta name="keywords" content="sklep, dom, akcesoria, sypialnia, kuchnia, salon">
+    <title>For Home - produkty</title>
+    <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer type="module"></script>
+</head>
+<body data-page="product-list">
+<nav class="nav nav__mobile nav__container">
+    <button id="nav-btn" class="nav__button nav__button--burger">
+        <i id="nav-icon" class="ti ti-menu-2 "></i>
+    </button>
+    <ul id="nav-mobile" class="nav__items">
+        <li><a href="index.html" class="link logo logo--big">For Home
+            </a></li>
+            <li><a data-category="bedroom" href="lista-produktow.html" class="link link-product">Sypialnia</a></li>
+            <li><a data-category="kitchen" href="lista-produktow.html" class="link link-product">Kuchnia</a></li>
+            <li><a data-category="living-room" href="lista-produktow.html" class="link link-product">Salon</a></li>
+            <li><a data-category="accesories" href="lista-produktow.html" class="link link-product">Akcesoria</a></li>
+            <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
+            <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a></li>
+    </ul>
+    <div>
+        <button class="nav__button link"><i class="ti ti-search"></i></button>
+        <a href="lista-zyczen.html" class="link">
+            <i class="ti ti-heart"></i>
+        </a>
+        <a href="koszyk.html" class="link">
+            <i class="ti ti-shopping-cart"></i>
+        </a>
+    </div>
+</nav>
+<nav class="nav nav__desktop">
+    <ul class="wrapper nav__container">
+        <li><a href="index.html" class="link logo">For Home</a></li>
+        <li><a data-category="bedroom" href="lista-produktow.html" class="link link-product">Sypialnia</a></li>
+        <li><a data-category="kitchen" href="lista-produktow.html" class="link link-product">Kuchnia</a></li>
+        <li><a data-category="living-room" href="lista-produktow.html" class="link link-product">Salon</a></li>
+        <li><a data-category="accesories" href="lista-produktow.html" class="link link-product">Akcesoria</a></li>
+        <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
+        <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a></li>
+        <li><button class="nav__button link"><i class="ti ti-search"></i></button></li>
+        <li><a href="lista-zyczen.html" class="link">
+                <i class="ti ti-heart"></i>
+            </a>
+        </li>
+        <li><a href="koszyk.html" class="link">
+                <i class="ti ti-shopping-cart"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+<header>
+    <div class="wrapper">
+        <div class="header-img__container">
+            <div class="header-img header-img--first header-img--active">
+                <div class="header-img__shadow"></div>
+                <div class="header-img__text">
+                    <h1>Wszystko co najlepsze dla Twojego domu</h1>
+                </div>
+            </div>
+            <div class="header-img header-img--second header-img--disabled">
+                <div class="header-img__shadow"></div>
+                <div class="header-img__text">
+                    <p>5% rabatu na zakupy z kodem</p>
+                    <p class="header-img__text--main">PROMO5</p>
+                </div>
+            </div>
+            <button id="backward-btn" class="header-img__button header-img__button--left"><i
+                    class="ti ti-chevron-left"></i></button>
+            <button id="forward-btn" class="header-img__button header-img__button--right"><i
+                    class="ti ti-chevron-right"></i></button>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="section protuct-list">
+        <div class="wrapper">
+            <div>sortowanie</div>
+            <div id="product-list-container" class="product-list__container">
+                <div>sortuj wg</div>
+            </div>
+        </div>
+    </section>
+    <section class="section about-us">
+        <div class="wrapper">
+            <div class="about-us__container">
+                <div class="about-us__item">
+                    <i class="ti ti-packge-export"></i>
+                    <p>Wysyłka w 24h</p>
+                </div>
+                <div class="about-us__item">
+                    <i class="ti ti-truck-delivery"></i>
+                    <p>Darmowa dostawa od 199zł</p>
+                </div>
+
+                <div class="about-us__item">
+                    <i class="ti ti-rotate-clockwise"></i>
+                    <p>Możliwość zwrotu do 14 dni</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section faq">
+        <div class="wrapper">
+            <h2 class="section__heading">FAQ</h2>
+            <div class="faq__container">
+                <ul class="faq__question-list">
+                    <li>
+                        <div class="faq__heading">
+                            <h3>Jak mogę złożyć zamówienie?</h3>
+                            <button><i class="ti ti-chevron-down"></i></button>
+                        </div>
+                        <div class="faq__content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quaerat facilis
+                                quisquam! Vel fugit maiores sed officia beatae aliquam et soluta ipsum corrupti, cum
+                                nobis dolorem recusandae sequi assumenda odit!
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="faq__heading">
+                            <h3>Jak mogę zapłacić za zamówienie?</h3>
+                            <button><i class="ti ti-chevron-down"></i></button>
+                        </div>
+                        <div class="faq__content">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit vel accusantium
+                                error laboriosam quis! Assumenda, odio ipsum dolor ex dignissimos cum blanditiis
+                                fugiat voluptate! Eum, libero? Placeat aut non hic.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="faq__heading">
+                            <h3>Jakie są opcje dostawy?</h3>
+                            <button><i class="ti ti-chevron-down"></i></button>
+                        </div>
+                        <div class="faq__content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minus suscipit
+                                voluptatum atque eligendi ea harum? Consectetur cum quibusdam rerum iste quod! Vero
+                                illo assumenda voluptate saepe, molestiae sapiente, natus fuga nulla, ipsum sed rem
+                                ipsa perferendis veritatis veniam optio.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="faq__heading">
+                            <h3>Jaki jest czas realizacji zamówienia?</h3>
+                            <button><i class="ti ti-chevron-down"></i></button>
+                        </div>
+                        <div class="faq__content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio reprehenderit
+                                adipisci, incidunt illum expedita consequuntur eius, enim quo nisi, temporibus omnis
+                                officiis aspernatur consectetur. Molestiae, impedit corrupti. Error, vel ullam.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="faq__heading">
+                            <h3>W jaki sposób mogę złożyć reklamację?</h3>
+                            <button><i class="ti ti-chevron-down"></i></button>
+                        </div>
+                        <div class="faq__content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui dolores neque nostrum
+                                accusantium ipsam sunt et reiciendis voluptates odio, sint cumque. Harum saepe cum
+                                provident rem numquam, deserunt dolorum dolor fugiat quasi, autem amet, non in
+                                molestiae beatae eius exercitationem.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="faq__heading">
+                            <h3>Co zrobić w przypadku otrzymania uszkodzonego produktu?</h3>
+                            <button><i class="ti ti-chevron-down"></i></button>
+                        </div>
+                        <div class="faq__content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deleniti
+                                exercitationem sint voluptatibus similique atque quod odit aliquam eaque nam culpa
+                                minus reiciendis ipsa earum sequi eveniet minima officia natus placeat alias nobis,
+                                perspiciatis neque reprehenderit. A fugit et alias!</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section contact">
+        <div class="wrapper">
+            <div class="contact__container">
+                <div class="contact__item contact__item--logo">
+                    <p class="logo logo--big">For Home</p>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="link">
+                        <i class="ti ti-brand-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="link">
+                        <i class="ti ti-brand-instagram"></i>
+                    </a>
+                </div>
+                <div class="contact__item">
+                    <div>
+                        <h3 class="contact__heading">Korespondencja biurowa:</h3>
+                        <p>For Home sp z.o.o.</p>
+                        <p>ul. Pogodna 0</p>
+                        <p>00-000 Warszawa</p>
+                    </div>
+                    <div>
+                        <h3 class="contact__heading">Obsługa klienta:</h3>
+                        <p><i class="ti ti-phone"></i>+48 111 222 333</p>
+                        <p><i class="ti ti-mail"></i>kontakt@for-home.pl</p>
+                    </div>
+                </div>
+                <div class="contact__item">
+                    <h3 class="contact__heading">Bądź na bierząco z naszymi promocjami!
+                    </h3>
+                    <form id="newsletter">
+                        <label for="email">Zapisz się do newslettera:</label>
+                        <input idd="email" type="email" placeholder="Wpisz swój adres e-mail" required
+                            autocomplete="email">
+                        <button type="submit">Zapisz się</button>
+                        <p class="contact__confirmation-text"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="wrapper">
+        <p class="footer__text">&copy; <span id="year"></span>
+            Created by <a href="https://github.com/Ronnessa" target="_blank" rel="noopener noreferrer"
+                class="link link--white">Ronnessa</a></pc>
+    </div>
+</footer>
+</body>
+
+</html>

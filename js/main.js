@@ -33,6 +33,17 @@ if (bodyAtribute === 'main') {
 	if (cart.length > 0) {
 		changeAmount(cart);
 	}
+} else if (bodyAtribute === 'product-list') {
+	import('./modules/header-slider.js').then(module => module.changeImages());
+	const category = localStorage.getItem('category');
+	function renderProductList() {
+		const productListContainer = document.getElementById('product-list-container')
+		renderProducts(productListContainer, category)
+	}
+	renderProductList()
+	addToCart(cart);
+} else if (bodyAtribute === 'product'){
+	
 }
 
 // all pages functions
@@ -62,6 +73,15 @@ function addListenerToNav() {
 	}
 }
 addListenerToNav();
+
+function getProductData(){
+	const links = document.querySelectorAll('.link-product')
+	links.forEach(link => link.addEventListener('click', () => {
+		const category = link.getAttribute('data-category')
+		localStorage.setItem('category', category);
+	}))
+}
+getProductData()
 
 function showFAQAnswers() {
 	const questions = document.querySelectorAll('.faq__heading');

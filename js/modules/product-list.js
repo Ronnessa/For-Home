@@ -33,17 +33,24 @@ export const productList = [
 		'bedclothes',
 		'all',
 	]),
-	new Product(5, 'Przytulna pościel', './img/products/bedroom/bedclothes/cosy.jpg', 'przytulna, beżowa pościel', 69.99, 79.99, [
-		'bedroom',
-		'bedclothes',
-		'all',
-		'promo',
-	]),
-	new Product(6, 'Pościel w paski', './img/products/bedroom/bedclothes/stripes.jpg', 'pościel w kolorowe paski', 89.99, '', [
-		'bedroom',
-		'bedclothes',
-		'all',
-	]),
+	new Product(
+		5,
+		'Przytulna pościel',
+		'./img/products/bedroom/bedclothes/cosy.jpg',
+		'przytulna, beżowa pościel',
+		69.99,
+		79.99,
+		['bedroom', 'bedclothes', 'all', 'promo']
+	),
+	new Product(
+		6,
+		'Pościel w paski',
+		'./img/products/bedroom/bedclothes/stripes.jpg',
+		'pościel w kolorowe paski',
+		89.99,
+		'',
+		['bedroom', 'bedclothes', 'all']
+	),
 	new Product(
 		7,
 		`Kubek "Adventure"`,
@@ -71,15 +78,11 @@ export const productList = [
 		24.99,
 		['kitchen', 'mugs', 'all', 'promo']
 	),
-	new Product(
-		10,
-		'Kubek w kropki',
-		'./img/products/kitchen/mugs/dots.jpg',
-		'kubek w kolorowe kropki',
-		24.99,
-		'',
-		['kitchen', 'mugs', 'all']
-	),
+	new Product(10, 'Kubek w kropki', './img/products/kitchen/mugs/dots.jpg', 'kubek w kolorowe kropki', 24.99, '', [
+		'kitchen',
+		'mugs',
+		'all',
+	]),
 	new Product(
 		11,
 		'Talerz klasyczny',
@@ -89,31 +92,25 @@ export const productList = [
 		'',
 		['kitchen', 'plates', 'all']
 	),
-	new Product(
-		12,
-		'Zielony talerz',
-		'./img/products/kitchen/plates/green.jpg',
-		'zielony talerz',
-		16.99,
-		'',
-		['kitchen', 'plates', 'all']
-	),
-	new Product(
-		13,
-		'Talerz "Smutny"',
-		'./img/products/kitchen/plates/sad.jpg',
-		'talerz z smutną buźką',
-		15.99,
-		19.99,
-		['bestsellers', 'kitchen', 'plates', 'all', 'promo']
-	),
+	new Product(12, 'Zielony talerz', './img/products/kitchen/plates/green.jpg', 'zielony talerz', 16.99, '', [
+		'kitchen',
+		'plates',
+		'all',
+	]),
+	new Product(13, 'Talerz "Smutny"', './img/products/kitchen/plates/sad.jpg', 'talerz z smutną buźką', 15.99, 19.99, [
+		'bestsellers',
+		'kitchen',
+		'plates',
+		'all',
+		'promo',
+	]),
 	new Product(
 		14,
 		'Doniczka klasyczna',
 		'./img/products/living-room/flowerpots/classic.jpg',
 		'biała, klasyczna doniczka',
 		19.99,
-		"",
+		'',
 		['living-room', 'flowerpots', 'all']
 	),
 	new Product(
@@ -131,8 +128,8 @@ export const productList = [
 		'./img/products/living-room/flowerpots/puppy.jpg',
 		'biała doniczka w kształcie pieska',
 		24.99,
-		"",
-		['bestsellers','living-room', 'flowerpots', 'all']
+		'',
+		['bestsellers', 'living-room', 'flowerpots', 'all']
 	),
 	new Product(
 		17,
@@ -140,7 +137,7 @@ export const productList = [
 		'./img/products/living-room/candles/wood.jpg',
 		'świeca w drewnianym świeczniku',
 		14.99,
-		"",
+		'',
 		['living-room', 'candles', 'all']
 	),
 	new Product(
@@ -149,8 +146,8 @@ export const productList = [
 		'./img/products/living-room/candles/magic.jpg',
 		'świeca "kociołek magiczny',
 		24.99,
-		"",
-		['bestsellers','living-room', 'candles', 'all']
+		'',
+		['bestsellers', 'living-room', 'candles', 'all']
 	),
 	new Product(
 		19,
