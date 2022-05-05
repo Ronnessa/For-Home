@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js" defer type="module"></script>
 </head>
+
 <body data-page="product">
     <nav class="nav nav__mobile nav__container">
         <button id="nav-btn" class="nav__button nav__button--burger">
@@ -24,12 +25,13 @@
         <ul id="nav-mobile" class="nav__items">
             <li><a href="index.html" class="link logo logo--big">For Home
                 </a></li>
-                <li><a data-category="bedroom" href="lista-produktow.html" class="link link-product">Sypialnia</a></li>
-                <li><a data-category="kitchen" href="lista-produktow.html" class="link link-product">Kuchnia</a></li>
-                <li><a data-category="living-room" href="lista-produktow.html" class="link link-product">Salon</a></li>
-                <li><a data-category="accesories" href="lista-produktow.html" class="link link-product">Akcesoria</a></li>
-                <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
-                <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a></li>
+            <li><a data-category="bedroom" href="lista-produktow.html" class="link link-product">Sypialnia</a></li>
+            <li><a data-category="kitchen" href="lista-produktow.html" class="link link-product">Kuchnia</a></li>
+            <li><a data-category="living-room" href="lista-produktow.html" class="link link-product">Salon</a></li>
+            <li><a data-category="accesories" href="lista-produktow.html" class="link link-product">Akcesoria</a></li>
+            <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
+            <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a>
+            </li>
         </ul>
         <div>
             <button class="nav__button link"><i class="ti ti-search"></i></button>
@@ -65,8 +67,7 @@
     <main>
         <section class="section product">
             <div class="wrapper">
-                <h2 class="section__heading">Produkt X</h2>
-                <div class="bestsellers__container"></div>
+                <div id='product-container'></div>
             </div>
         </section>
         <section class="section about-us">
@@ -215,4 +216,5 @@
         </div>
     </footer>
 </body>
+
 </html>

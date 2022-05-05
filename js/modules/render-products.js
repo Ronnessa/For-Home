@@ -13,10 +13,10 @@ export function renderProducts(container, category) {
 				<img class="item__heart-img empty" src="./img/heart.svg" alt="dodaj do listy życzeń">
 				<img class="item__heart-img item__heart-img--disabled filled" src="./img/heart-filled.svg" alt="usuń z listy życzeń">
 				</button>
-				<a data-id="${product.id}" href="produkt.html" class='link'><img class="item__image" src="${product.imageUrl}" alt="${product.alt}"></a>
+				<a data-id="${product.id}" href="produkt.html" class='link link-product-page'><img class="item__image" src="${product.imageUrl}" alt="${product.alt}"></a>
 				</div>
 				<div class="item__description-container">
-				<h3 class="item__title"><a data-id="${product.id}" href="produkt.html" class='link'>${product.title}</a></h3>
+				<h3 class="item__title"><a data-id="${product.id}" href="produkt.html" class='link link-product-page'>${product.title}</a></h3>
 				<p class="item__price item__price--new">${product.price} zł<span class="item__price--old">${product.oldPrice} zł</span></p>
 				<button data-id="${product.id}" class="item__btn add-to-cart">Dodaj do koszyka</button>
 				</div>
@@ -27,10 +27,10 @@ export function renderProducts(container, category) {
 				<button data-id="${product.id}" class="item__heart">
 				<img class="item__heart-img empty" src="./img/heart.svg" alt="dodaj do listy życzeń">
 				<img class="item__heart-img item__heart-img--disabled filled" src="./img/heart-filled.svg" alt="usuń z listy życzeń"></button>
-				<a data-id="${product.id}" href="produkt.html" class='link'><img class="item__image" src="${product.imageUrl}" alt="${product.alt}"></a>
+				<a data-id="${product.id}" href="produkt.html" class='link link-product-page'><img class="item__image" src="${product.imageUrl}" alt="${product.alt}"></a>
 				</div>
 				<div class="item__description-container">
-				<h3 class="item__title"><a data-id="${product.id}" href="produkt.html" class='link'>${product.title}</a></h3>
+				<h3 class="item__title"><a data-id="${product.id}" href="produkt.html" class='link link-product-page'>${product.title}</a></h3>
 				<p class="item__price">${product.price} zł</p>
 				<button data-id="${product.id}" class="item__btn add-to-cart">Dodaj do koszyka</button>
 				</div>

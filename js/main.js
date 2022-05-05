@@ -4,8 +4,10 @@ import { addToCart } from './modules/add-to-cart.js';
 import { renderCart } from './modules/render-cart.js';
 import { addToWishlist } from './modules/add-to-wishlist.js';
 import { changeAmount } from './modules/change-amount-of-products.js';
+// import { renderPage } from './modules/render-product-page.js';
 
-const bodyAttribute = document.body.getAttribute('data-page');
+
+const bodyAttribute = document.body.dataset.page;
 
 const cart = [];
 const cartLocalStorage = localStorage.getItem('cart');
@@ -19,9 +21,6 @@ if (JSON.parse(wishlistLocalStorage)) {
 	wishlist.push(...JSON.parse(wishlistLocalStorage));
 }
 
-
-console.log(wishlist);
-
 updateCartIcon(cart);
 
 if (bodyAttribute === 'main') {
@@ -32,7 +31,7 @@ if (bodyAttribute === 'main') {
 	}
 	renderBestsellers();
 	addToCart(cart);
-	addToWishlist(wishlist)
+	addToWishlist(wishlist);
 } else if (bodyAttribute === 'product-list') {
 	import('./modules/header-slider.js').then(module => module.changeImages());
 	const category = localStorage.getItem('category');
@@ -42,15 +41,20 @@ if (bodyAttribute === 'main') {
 	}
 	renderProductList();
 	addToCart(cart);
-	addToWishlist(wishlist)
+	addToWishlist(wishlist);
 } else if (bodyAttribute === 'product') {
-
+	import('./modules/render-product-page.js').then(module => {
+		module.renderPage()
+		addToCart(cart)
+	})
 } else if (bodyAttribute === 'cart') {
 	renderCart(cart);
 	if (cart.length > 0) {
 		changeAmount(cart);
 	}
 }
+
+
 // all pages functions
 
 function addListenerToNav() {
@@ -89,6 +93,19 @@ function getCategoryData() {
 	);
 }
 getCategoryData();
+
+function getProductData() {
+	const links = document.querySelectorAll('.link-product-page');
+	if (links) {
+		links.forEach(link =>
+			link.addEventListener('click', () => {
+				const productData = link.getAttribute('data-id');
+				localStorage.setItem('product', productData);
+			})
+		);
+	}
+}
+getProductData();
 
 function showFAQAnswers() {
 	const questions = document.querySelectorAll('.faq__heading');
