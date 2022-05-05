@@ -396,13 +396,21 @@ body {
 
 .item__heart {
   position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 0.5em;
   border: none;
   background: none;
-  top: 10px;
-  right: 10px;
-  color: #df7523;
   z-index: 5;
   cursor: pointer;
+}
+
+.item__heart-img {
+  height: 2.5em;
+}
+
+.item__heart-img--disabled {
+  display: none;
 }
 
 .item__description-container {
@@ -715,6 +723,12 @@ body {
   border-radius: 5px;
   background-color: #fdf3ec;
   cursor: pointer;
+}
+
+.cart__item-btn--disabled {
+  background-color: #eee;
+  opacity: 0.5;
+  cursor: default;
 }
 
 .cart__amount {

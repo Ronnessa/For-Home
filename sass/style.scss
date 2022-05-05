@@ -225,13 +225,19 @@ body {
 
 	&__heart {
 		position: absolute;
+		right: 5px;
+		top: 5px;
+		padding: 0.5em;
 		border: none;
 		background: none;
-		top: 10px;
-		right: 10px;
-		color: $main-color;
 		z-index: 5;
 		cursor: pointer;
+	}
+	&__heart-img {
+		height: 2.5em;
+		&--disabled {
+			display: none;
+		}
 	}
 	&__description-container {
 		height: auto;
@@ -462,6 +468,11 @@ body {
 		border-radius: 5px;
 		background-color: $bgcolor2;
 		cursor: pointer;
+		&--disabled {
+			background-color: #eee;
+			opacity: 0.5;
+			cursor: default
+		}
 	}
 	&__amount {
 		margin: 0 0.5em;

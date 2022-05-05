@@ -5,11 +5,14 @@ export function renderProducts(container, category) {
 		if (product.categories.includes(category)) {
 			const productItem = document.createElement('div');
 			productItem.classList.add('bestsellers__item');
-
+			
 			if (product.oldPrice) {
 				productItem.innerHTML = `
 				<div class="item__image-container">
-				<button data-id="${product.id}" class="item__heart"><i class="ti ti-heart"></i></button>
+				<button data-id="${product.id}" class="item__heart">
+				<img class="item__heart-img empty" src="./img/heart.svg" alt="dodaj do listy życzeń">
+				<img class="item__heart-img item__heart-img--disabled filled" src="./img/heart-filled.svg" alt="usuń z listy życzeń">
+				</button>
 				<a data-id="${product.id}" href="produkt.html" class='link'><img class="item__image" src="${product.imageUrl}" alt="${product.alt}"></a>
 				</div>
 				<div class="item__description-container">
@@ -21,7 +24,9 @@ export function renderProducts(container, category) {
 			} else {
 				productItem.innerHTML = `
 				<div class="item__image-container">
-				<button data-id="${product.id}" class="item__heart"><i class="ti ti-heart"></i></button>
+				<button data-id="${product.id}" class="item__heart">
+				<img class="item__heart-img empty" src="./img/heart.svg" alt="dodaj do listy życzeń">
+				<img class="item__heart-img item__heart-img--disabled filled" src="./img/heart-filled.svg" alt="usuń z listy życzeń"></button>
 				<a data-id="${product.id}" href="produkt.html" class='link'><img class="item__image" src="${product.imageUrl}" alt="${product.alt}"></a>
 				</div>
 				<div class="item__description-container">

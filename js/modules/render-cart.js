@@ -53,6 +53,7 @@ export function renderCart(cart) {
 			list.append(item);
 		});
 	}
+
 	function clearCart() {
 		if (cart.length > 0) {
 			const clearBtn = document.getElementById('clear-btn');
