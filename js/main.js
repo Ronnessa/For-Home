@@ -4,8 +4,6 @@ import { addToCart } from './modules/add-to-cart.js';
 import { renderCart } from './modules/render-cart.js';
 import { addToWishlist } from './modules/add-to-wishlist.js';
 import { changeAmount } from './modules/change-amount-of-products.js';
-// import { renderPage } from './modules/render-product-page.js';
-
 
 const bodyAttribute = document.body.dataset.page;
 
@@ -52,6 +50,9 @@ if (bodyAttribute === 'main') {
 	if (cart.length > 0) {
 		changeAmount(cart);
 	}
+} else if (bodyAttribute === 'wishlist'){
+	import('./modules/render-wishlist.js').then(module => 
+		module.renderWishlist(wishlist))
 }
 
 

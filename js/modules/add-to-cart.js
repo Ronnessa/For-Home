@@ -5,7 +5,6 @@ export function addToCart(cart) {
 	const addBtns = document.querySelectorAll('.add-to-cart');
 	addBtns.forEach(btn => btn.addEventListener('click', pushProductToCart));
 
-	console.log(addBtns);
 	function pushProductToCart() {
 		const productId = this.getAttribute('data-id');
 

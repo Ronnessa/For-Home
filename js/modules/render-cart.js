@@ -1,3 +1,5 @@
+// import { productList } from "./product-list.js";
+
 export function renderCart(cart) {
 	const cartList = document.getElementById('cart-container');
 	if (cart.length === 0) {
@@ -11,12 +13,12 @@ export function renderCart(cart) {
 		list.classList.add('cart-list');
 		container.append(list);
 
-		const sum = document.createElement('div')
+		const sum = document.createElement('div');
 		sum.innerHTML = `
 		<p class="cart__sum-text">Razem:
 			<span id='total-price'></span>
 		</p>
-		`
+		`;
 		container.append(sum);
 
 		const btns = document.createElement('div');
@@ -32,8 +34,10 @@ export function renderCart(cart) {
 			const item = document.createElement('li');
 			item.classList.add('cart__item');
 			item.innerHTML = `
-			<img class="cart__item-img" src="${product.imageUrl}" alt="${product.alt}">
-			<h3>${product.title}</h3>
+			<a data-id="${product.id}" href='produkt.html' class="link link-product-page"><img class="cart__item-img" src="${
+				product.imageUrl
+			}" alt="${product.alt}"></a>
+			<h3><a data-id="${product.id}" href='produkt.html' class="link link-product-page">${product.title}</a></h3>
 			<div class="cart__item-details">
 				<div class="cart__item-details--left">
 					<p>Ilość:
@@ -48,6 +52,7 @@ export function renderCart(cart) {
 					<p>Cena:</p>
 					<p class="cart__price">${(product.price * product.amount).toFixed(2)} zł</p>
 				</div>
+				<button data-id="${product.id}" class='cart__delete'><i class="ti ti-x"></i></button>
 			</div>
 			`;
 			list.append(item);
@@ -67,4 +72,24 @@ export function renderCart(cart) {
 		}
 	}
 	clearCart();
+
+	function deleteItems() {
+		function addListeners() {
+			const deleteBtns = document.querySelectorAll('.cart__delete');
+			deleteBtns.forEach(btn => btn.addEventListener('click', deleteItem));
+		}
+		addListeners();
+		function deleteItem() {
+			const productId = this.getAttribute('data-id');
+			cart.forEach(product => {
+				if ((product.id == productId)) {
+					const index = cart.indexOf(product);
+					cart.splice(index, 1);
+					localStorage.setItem('cart', JSON.stringify(cart));
+					location.reload();
+				}
+			});
+		}
+	}
+	deleteItems();
 }
