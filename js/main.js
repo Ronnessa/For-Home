@@ -4,6 +4,7 @@ import { addToCart } from './modules/add-to-cart.js';
 import { renderCart } from './modules/render-cart.js';
 import { addToWishlist } from './modules/add-to-wishlist.js';
 import { changeAmount } from './modules/change-amount-of-products.js';
+import { productList } from './modules/product-list.js';
 
 const bodyAttribute = document.body.dataset.page;
 
@@ -25,7 +26,7 @@ if (bodyAttribute === 'main') {
 	import('./modules/header-slider.js').then(module => module.changeImages());
 	function renderBestsellers() {
 		const bestsellersList = document.getElementById('bestsellers-container');
-		renderProducts(bestsellersList, 'bestsellers', wishlist);
+		renderProducts(bestsellersList, 'bestsellers', productList);
 	}
 	renderBestsellers();
 	addToCart(cart);
@@ -35,26 +36,37 @@ if (bodyAttribute === 'main') {
 	const category = localStorage.getItem('category');
 	function renderProductList() {
 		const productListContainer = document.getElementById('product-list-container');
-		renderProducts(productListContainer, category, wishlist);
+		renderProducts(productListContainer, category, productList);
 	}
 	renderProductList();
 	addToCart(cart);
 	addToWishlist(wishlist);
 } else if (bodyAttribute === 'product') {
 	import('./modules/render-product-page.js').then(module => {
-		module.renderPage()
-		addToCart(cart)
-	})
+		module.renderPage();
+		addToCart(cart);
+	});
 } else if (bodyAttribute === 'cart') {
 	renderCart(cart);
 	if (cart.length > 0) {
 		changeAmount(cart);
 	}
-} else if (bodyAttribute === 'wishlist'){
-	import('./modules/render-wishlist.js').then(module => 
-		module.renderWishlist(wishlist))
+} else if (bodyAttribute === 'wishlist') {
+	const wishlistContainer = document.getElementById('wishlist-container');
+	if (wishlist.length === 0) {
+		const text = document.createElement('p');
+		text.classList.add('wishlist__empty');
+		text.textContent = 'Twoja lista życzeń jest pusta!';
+		wishlistContainer.append(text);
+	} else {
+		function renderWishlist() {
+			renderProducts(wishlistContainer, 'all', wishlist);
+		}
+		renderWishlist();
+		addToCart(cart);
+		addToWishlist(wishlist);
+	}
 }
-
 
 // all pages functions
 

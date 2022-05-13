@@ -33,6 +33,9 @@ export function addToWishlist(wishlist) {
 				const index = wishlist.indexOf(product);
 				wishlist.splice(index, 1);
 				localStorage.setItem('wishlist', JSON.stringify(wishlist));
+				if (document.body.dataset.page === 'wishlist'){
+					location.reload();
+				}
 			}
 		});
 	}

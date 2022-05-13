@@ -1,7 +1,5 @@
-import { productList } from './product-list.js';
-
-export function renderProducts(container, category) {
-	productList.forEach(product => {
+export function renderProducts(container, category, array) {
+	array.forEach(product => {
 		if (product.categories.includes(category)) {
 			const productItem = document.createElement('div');
 			productItem.classList.add('bestsellers__item');

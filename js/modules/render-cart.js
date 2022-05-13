@@ -1,5 +1,3 @@
-// import { productList } from "./product-list.js";
-
 export function renderCart(cart) {
 	const cartList = document.getElementById('cart-container');
 	if (cart.length === 0) {
