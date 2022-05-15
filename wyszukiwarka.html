@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="For Home - strona produktu">
+    <meta name="description" content="For Home - wyszukiwarka">
     <meta name="keywords" content="sklep, dom, akcesoria, sypialnia, kuchnia, salon">
-    <title>For Home - strona produktu</title>
+    <title>Wyszukiwarka</title>
     <link rel="stylesheet" href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/main.js" defer type="module"></script>
 </head>
-
-<body data-page="product">
+<body data-page="search">
     <nav class="nav nav__mobile nav__container">
         <button id="nav-btn" class="nav__button">
             <i id="nav-icon" class="ti ti-menu-2 "></i>
@@ -25,16 +24,15 @@
         <ul id="nav-mobile" class="nav__items">
             <li><a href="index.html" class="link logo logo--big">For Home
                 </a></li>
-            <li><a data-category="bedroom" href="lista-produktow.html" class="link link-product">Sypialnia</a></li>
-            <li><a data-category="kitchen" href="lista-produktow.html" class="link link-product">Kuchnia</a></li>
-            <li><a data-category="living-room" href="lista-produktow.html" class="link link-product">Salon</a></li>
-            <li><a data-category="accesories" href="lista-produktow.html" class="link link-product">Akcesoria</a></li>
-            <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
-            <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a>
-            </li>
+                <li><a data-category="bedroom" href="lista-produktow.html" class="link link-product">Sypialnia</a></li>
+                <li><a data-category="kitchen" href="lista-produktow.html" class="link link-product">Kuchnia</a></li>
+                <li><a data-category="living-room" href="lista-produktow.html" class="link link-product">Salon</a></li>
+                <li><a data-category="accesories" href="lista-produktow.html" class="link link-product">Akcesoria</a></li>
+                <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
+                <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a></li>
         </ul>
         <div>
-            <a href="wyszukiwarka.html" class="link"><i class="ti ti-search"></i></a>
+            <a href="#" class="link"><i class="ti ti-search"></i></a>
             <a href="lista-zyczen.html" class="link">
                 <i class="ti ti-heart"></i>
             </a>
@@ -53,7 +51,7 @@
             <li><a data-category="all" href="lista-produktow.html" class="link link-product">Wszystkie produkty</a></li>
             <li><a data-category="promo" href="lista-produktow.html" class="link link--red link-product">Wyprzedaż</a>
             </li>
-            <li><a href="wyszukiwarka.html" class="link"><i class="ti ti-search"></i></a></li>
+            <li><a href="#" class="link"><i class="ti ti-search"></i></a></li>
             <li><a href="lista-zyczen.html" class="link">
                     <i class="ti ti-heart"></i>
                 </a>
@@ -65,11 +63,6 @@
         </ul>
     </nav>
     <main>
-        <section class="section product">
-            <div class="wrapper">
-                <div id='product-container'></div>
-            </div>
-        </section>
         <section class="section about-us">
             <div class="wrapper">
                 <div class="about-us__container">
@@ -216,5 +209,4 @@
         </div>
     </footer>
 </body>
-
 </html>
