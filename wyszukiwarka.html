@@ -63,6 +63,18 @@
         </ul>
     </nav>
     <main>
+        <section class="section bestsellers">
+            <div class="wrapper">
+                <!-- <h2 class="section__heading">Szukaj</h2> -->
+                <form id="search-form">
+                    <label for="search-input">Wyszukaj produkt:</label>
+                    <input id="search-input" type="text" placeholder="Wpisz szukaną frazę..." required pattern=".*\S+.*"
+                    title="To pole nie może być puste">
+                    <button type="submit">Szukaj</button>
+                </form>
+                <div id="product-container" class="bestsellers__container"></div>
+            </div>
+        </section>
         <section class="section about-us">
             <div class="wrapper">
                 <div class="about-us__container">

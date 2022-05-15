@@ -66,6 +66,12 @@ if (bodyAttribute === 'main') {
 		addToCart(cart);
 		addToWishlist(wishlist);
 	}
+} else if (bodyAttribute === 'search') {
+	import('./modules/search-engine.js').then(module => {
+		module.searchForProducts();
+		addToCart(cart);
+		addToWishlist(wishlist);
+	});
 }
 
 // all pages functions
