@@ -22,6 +22,7 @@ export function searchForProducts() {
 	addListenerToForm();
 
 	const searchListContainer = document.getElementById('product-container');
+	
 	function search(e) {
 		e.preventDefault();
 		let searchText = document.getElementById('search-input');
@@ -34,17 +35,19 @@ export function searchForProducts() {
 				searchList.push(product);
 			}
 		});
-		renderSearchedProducts(searchList);
+		renderSearchedProducts(searchList, searchWord);
 	}
-
-	function renderSearchedProducts(arr) {
+	
+	function renderSearchedProducts(arr, word) {
+		const resultText = document.querySelector('.search__result-text')
 		if (arr.length > 0) {
+			resultText.textContent = `Wyniki wyszukiwania dla "${word}"`
 			renderProducts(searchListContainer, 'all', arr);
 			addToCart(cart);
 			addToWishlist(wishlist);
 		}
-		// else {
-		// 	console.log(false);
-		// }
+		else {
+			resultText.textContent = `Brak wyników wyszukiwania dla "${word}"`
+		}
 	}
 }

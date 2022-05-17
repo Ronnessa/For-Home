@@ -65,14 +65,16 @@
     <main>
         <section class="section bestsellers">
             <div class="wrapper">
-                <!-- <h2 class="section__heading">Szukaj</h2> -->
-                <form id="search-form">
-                    <label for="search-input">Wyszukaj produkt:</label>
-                    <input id="search-input" type="text" placeholder="Wpisz szukaną frazę..." required pattern=".*\S+.*"
+                <h2 class="section__heading search">Wyszukiwarka</h2>
+                <form id="search-form" class="search__form">
+                    <label for="search-input">Znajdź produkt:</label>
+                    <input id="search-input" type="text" placeholder="Szukaj w sklepie, np. kubek" required pattern=".*\S+.*"
                     title="To pole nie może być puste">
                     <button type="submit">Szukaj</button>
                 </form>
-                <div id="product-container" class="bestsellers__container"></div>
+                <p class="search__result-text"></p>
+                <div id="product-container" class="bestsellers__container">
+                </div>
             </div>
         </section>
         <section class="section about-us">
