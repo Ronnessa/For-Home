@@ -13,7 +13,7 @@ export function addToWishlist(wishlist) {
 		this.nextElementSibling.classList.remove('item__heart-img--disabled');
 		this.classList.add('item__heart-img--disabled');
 
-		const productId = this.parentNode.getAttribute('data-id');
+		const productId = this.parentNode.dataset.id;
 
 		productList.forEach(product => {
 			if (product.id == productId) {
@@ -27,13 +27,13 @@ export function addToWishlist(wishlist) {
 		this.previousElementSibling.classList.remove('item__heart-img--disabled');
 		this.classList.add('item__heart-img--disabled');
 
-		const productId = this.parentNode.getAttribute('data-id');
+		const productId = this.parentNode.dataset.id;
 		wishlist.forEach(product => {
 			if (product.id == productId) {
 				const index = wishlist.indexOf(product);
 				wishlist.splice(index, 1);
 				localStorage.setItem('wishlist', JSON.stringify(wishlist));
-				if (document.body.dataset.page === 'wishlist'){
+				if (document.body.dataset.page === 'wishlist') {
 					location.reload();
 				}
 			}
@@ -43,7 +43,7 @@ export function addToWishlist(wishlist) {
 	function toggleHeartIcons() {
 		const heartBtns = document.querySelectorAll('.item__heart');
 		heartBtns.forEach(btn => {
-			const id = btn.getAttribute('data-id');
+			const id = btn.dataset.id;
 			wishlist.forEach(product => {
 				if (product.id == id) {
 					btn.children[0].classList.toggle('item__heart-img--disabled');

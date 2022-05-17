@@ -1,10 +1,9 @@
 import { renderProducts } from './modules/render-products.js';
 import { updateCartIcon } from './modules/update-cart-icon.js';
 import { addToCart } from './modules/add-to-cart.js';
-import { renderCart } from './modules/render-cart.js';
 import { addToWishlist } from './modules/add-to-wishlist.js';
-import { changeAmount } from './modules/change-amount-of-products.js';
 import { productList } from './modules/product-list.js';
+import { sortProducts } from './modules/sorting-logic.js';
 
 const bodyAttribute = document.body.dataset.page;
 
@@ -24,54 +23,60 @@ updateCartIcon(cart);
 
 if (bodyAttribute === 'main') {
 	import('./modules/header-slider.js').then(module => module.changeImages());
-	function renderBestsellers() {
-		const bestsellersList = document.getElementById('bestsellers-container');
-		renderProducts(bestsellersList, 'bestsellers', productList);
-	}
-	renderBestsellers();
+
+	const bestsellersList = document.getElementById('bestsellers-container');
+	renderProducts(bestsellersList, 'bestsellers', productList);
 	addToCart(cart);
 	addToWishlist(wishlist);
 } else if (bodyAttribute === 'product-list') {
 	import('./modules/header-slider.js').then(module => module.changeImages());
+	sortProducts(productList);
 	const category = localStorage.getItem('category');
-	function renderProductList() {
-		const productListContainer = document.getElementById('product-list-container');
-		renderProducts(productListContainer, category, productList);
-	}
-	renderProductList();
+	const productListContainer = document.getElementById('product-list-container');
+	renderProducts(productListContainer, category, productList);
 	addToCart(cart);
 	addToWishlist(wishlist);
+
+	function addListenerToOptions() {
+		const option = document.getElementById('sort');
+		option.addEventListener('change', e => {
+			const value = e.target.value
+			sortProducts(productList, value);
+			productListContainer.innerHTML = ``
+			renderProducts(productListContainer, category, productList);
+			addToCart(cart);
+			addToWishlist(wishlist);
+		});
+	}
+	addListenerToOptions();
 } else if (bodyAttribute === 'product') {
 	import('./modules/render-product-page.js').then(module => {
 		module.renderPage();
 		addToCart(cart);
 	});
 } else if (bodyAttribute === 'cart') {
-	renderCart(cart);
+	import('./modules/render-cart.js').then(module => {
+		module.renderCart(cart);
+		getProductData();
+	});
 	if (cart.length > 0) {
-		changeAmount(cart);
+		import('./modules/change-amount-of-products.js').then(module => module.changeAmount(cart));
 	}
 } else if (bodyAttribute === 'wishlist') {
 	const wishlistContainer = document.getElementById('wishlist-container');
+
 	if (wishlist.length === 0) {
 		const text = document.createElement('p');
 		text.classList.add('wishlist__empty');
 		text.textContent = 'Twoja lista życzeń jest pusta!';
 		wishlistContainer.append(text);
 	} else {
-		function renderWishlist() {
-			renderProducts(wishlistContainer, 'all', wishlist);
-		}
-		renderWishlist();
+		renderProducts(wishlistContainer, 'all', wishlist);
 		addToCart(cart);
 		addToWishlist(wishlist);
 	}
 } else if (bodyAttribute === 'search') {
-	import('./modules/search-engine.js').then(module => {
-		module.searchForProducts();
-		addToCart(cart);
-		addToWishlist(wishlist);
-	});
+	import('./modules/search-engine.js').then(module => module.searchForProducts());
 }
 
 // all pages functions
@@ -106,19 +111,19 @@ function getCategoryData() {
 	const links = document.querySelectorAll('.link-product');
 	links.forEach(link =>
 		link.addEventListener('click', () => {
-			const category = link.getAttribute('data-category');
+			const category = link.dataset.category;
 			localStorage.setItem('category', category);
 		})
 	);
 }
 getCategoryData();
 
-function getProductData() {
+export function getProductData() {
 	const links = document.querySelectorAll('.link-product-page');
 	if (links) {
 		links.forEach(link =>
 			link.addEventListener('click', () => {
-				const productData = link.getAttribute('data-id');
+				const productData = link.dataset.id;
 				localStorage.setItem('product', productData);
 			})
 		);

@@ -11,7 +11,7 @@ export function changeAmount(cart) {
 	addListenersToBtns();
 
 	function increment() {
-		const productId = this.getAttribute('data-id');
+		const productId = this.dataset.id;
 		const amount = this.previousElementSibling;
 		const price = amount.closest('.cart__item-details--left').nextElementSibling.lastElementChild;
 		cart.forEach(product => {
@@ -28,7 +28,7 @@ export function changeAmount(cart) {
 	}
 
 	function decrement() {
-		const productId = this.getAttribute('data-id');
+		const productId = this.dataset.id;
 		const amount = this.nextElementSibling;
 		const price = amount.closest('.cart__item-details--left').nextElementSibling.lastElementChild;
 		cart.forEach(product => {

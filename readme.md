@@ -21,6 +21,7 @@ Frontend of an e-commerce website.
 - add product to the wishlist
 - show product page
 - show a list of products by the category in navigation
+- sort list of products by name or price
 - search of products by name
 - change amount of products in the cart
 - delete single product from the cart

@@ -6,7 +6,7 @@ export function addToCart(cart) {
 	addBtns.forEach(btn => btn.addEventListener('click', pushProductToCart));
 
 	function pushProductToCart() {
-		const productId = this.getAttribute('data-id');
+		const productId = this.dataset.id;
 
 		for (let i = 0; i < cart.length; i++) {
 			if (cart[i].id == productId) {

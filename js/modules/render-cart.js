@@ -78,9 +78,9 @@ export function renderCart(cart) {
 		}
 		addListeners();
 		function deleteItem() {
-			const productId = this.getAttribute('data-id');
+			const productId = this.dataset.id;
 			cart.forEach(product => {
-				if ((product.id == productId)) {
+				if (product.id == productId) {
 					const index = cart.indexOf(product);
 					cart.splice(index, 1);
 					localStorage.setItem('cart', JSON.stringify(cart));

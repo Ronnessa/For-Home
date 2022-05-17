@@ -1090,5 +1090,8 @@ body {
     margin-left: 4em;
     width: 90%;
   }
+  .search__form input {
+    width: 60%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

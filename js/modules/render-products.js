@@ -3,7 +3,7 @@ export function renderProducts(container, category, array) {
 		if (product.categories.includes(category)) {
 			const productItem = document.createElement('div');
 			productItem.classList.add('bestsellers__item');
-			
+
 			if (product.oldPrice) {
 				productItem.innerHTML = `
 				<div class="item__image-container">

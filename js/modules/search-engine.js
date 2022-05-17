@@ -2,6 +2,7 @@ import { renderProducts } from './render-products.js';
 import { productList } from './product-list.js';
 import { addToCart } from './add-to-cart.js';
 import { addToWishlist } from './add-to-wishlist.js';
+import { getProductData } from '../main.js';
 
 export function searchForProducts() {
 	const cart = [];
@@ -43,6 +44,7 @@ export function searchForProducts() {
 		if (arr.length > 0) {
 			resultText.textContent = `Wyniki wyszukiwania dla "${word}"`
 			renderProducts(searchListContainer, 'all', arr);
+			getProductData()
 			addToCart(cart);
 			addToWishlist(wishlist);
 		}
