@@ -98,7 +98,6 @@ export const productList = [
 		'all',
 	]),
 	new Product(13, 'Talerz "Smutny"', './img/products/kitchen/plates/sad.jpg', 'talerz z smutną buźką', 15.99, 19.99, [
-		'bestsellers',
 		'kitchen',
 		'plates',
 		'all',
@@ -157,5 +156,47 @@ export const productList = [
 		9.99,
 		14.99,
 		['living-room', 'candles', 'all', 'promo']
+	),
+	new Product(
+		20,
+		'Mydelniczka "Serce"',
+		'./img/products/bathroom/soap/heart.jpg',
+		'mydelniczka w kształcie serca',
+		19.99,
+		'',
+		['bestsellers', 'bathroom', 'soap', 'all']
+	),
+	new Product(21, 'Mydelniczka beżowa', './img/products/bathroom/soap/beige.jpg', 'mydelniczka beżowa', 15.99, 19.99, [
+		'bathroom',
+		'soap',
+		'all',
+		'promo'
+	]),
+	new Product(
+		22,
+		'Ręcznik szary',
+		'./img/products/bathroom/towels/grey.jpg',
+		'szary ręcznik',
+		29.99,
+		'',
+		['bathroom', 'towels', 'all']
+	),
+	new Product(
+		23,
+		'Ręcznik różowy',
+		'./img/products/bathroom/towels/pink.jpg',
+		'różowy ręcznik',
+		29.99,
+		'',
+		['bathroom', 'towels', 'all']
+	),
+	new Product(
+		24,
+		'Zestaw białych ręczników',
+		'./img/products/bathroom/towels/white.jpg',
+		'zestaw białych ręczników',
+		49.99,
+		'',
+		['bathroom', 'towels', 'all']
 	),
 ];
