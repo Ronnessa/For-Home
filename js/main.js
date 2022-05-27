@@ -36,19 +36,18 @@ if (bodyAttribute === 'main') {
 	renderProducts(productListContainer, category, productList);
 	addToCart(cart);
 	addToWishlist(wishlist);
-
-	function addListenerToOptions() {
+	function addListenerToSortOptions() {
 		const option = document.getElementById('sort');
 		option.addEventListener('change', e => {
-			const value = e.target.value
+			const value = e.target.value;
 			sortProducts(productList, value);
-			productListContainer.innerHTML = ``
+			productListContainer.innerHTML = ``;
 			renderProducts(productListContainer, category, productList);
 			addToCart(cart);
 			addToWishlist(wishlist);
 		});
 	}
-	addListenerToOptions();
+	addListenerToSortOptions();
 } else if (bodyAttribute === 'product') {
 	import('./modules/render-product-page.js').then(module => {
 		module.renderPage();

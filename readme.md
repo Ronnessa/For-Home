@@ -17,6 +17,7 @@ Frontend of an e-commerce website.
 
 ## Features
 
+Main features of the project:
 - add product to the cart
 - add product to the wishlist
 - show product page
