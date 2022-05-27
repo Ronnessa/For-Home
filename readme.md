@@ -34,7 +34,7 @@ The live version is available [here](https://ronnessa.github.io/For-Home/).
 
 ## Project Status
 
-The project is still in development.
+The project is finished.
 
 ## Sources
 
