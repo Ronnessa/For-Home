@@ -36,7 +36,7 @@ export function changeAmount(cart) {
 				product.amount--;
 				localStorage.setItem('cart', JSON.stringify(cart));
 				amount.textContent = product.amount;
-				price.textContent = `${(product.price * product.amount).toFixed(2)}`;
+				price.textContent = `${(product.price * product.amount).toFixed(2)} zł`;
 			}
 		});
 		calculateTotalPrice();
